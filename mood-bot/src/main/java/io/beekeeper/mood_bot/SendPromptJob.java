@@ -3,7 +3,7 @@ package io.beekeeper.mood_bot;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 
-import io.beekeeper.sdk.BeekeeperApi;
+import io.beekeeper.sdk.BeekeeperSDK;
 import io.beekeeper.sdk.exception.BeekeeperException;
 import io.beekeeper.sdk.model.Conversation;
 import io.beekeeper.sdk.model.UserProfile;
@@ -19,18 +19,18 @@ public class SendPromptJob implements Job {
     @Override
     public void execute(JobExecutionContext context) {
         try {
-            BeekeeperApi api = getApi(context);
+            BeekeeperSDK sdk = getSDK(context);
             SendMessageParams message = createMessage();
 
-            ProfileIterator iterator = new ProfileIterator(api);
+            ProfileIterator iterator = new ProfileIterator(sdk);
 
             // Send a message to all users
             while (iterator.hasNext()) {
                 iterator.advanceToNext();
                 UserProfile profile = iterator.getCurrent();
                 try {
-                    Conversation conversation = api.getConversations().getConversationByUsername(profile.getUsername()).execute();
-                    api.getConversations().sendMessage(conversation.getId(), message).execute();
+                    Conversation conversation = sdk.getConversations().getConversationByUsername(profile.getUsername()).execute();
+                    sdk.getConversations().sendMessage(conversation.getId(), message).execute();
                 } catch (BeekeeperException e) {
                     e.printStackTrace();
                 }
@@ -41,10 +41,10 @@ public class SendPromptJob implements Job {
         }
     }
 
-    private BeekeeperApi getApi(JobExecutionContext context) {
+    private BeekeeperSDK getSDK(JobExecutionContext context) {
         String tenantUrl = context.getJobDetail().getJobDataMap().getString(KEY_TENANT_URL);
         String apiToken = context.getJobDetail().getJobDataMap().getString(KEY_API_TOKEN);
-        return BeekeeperApi.newInstance(tenantUrl, apiToken);
+        return BeekeeperSDK.newInstance(tenantUrl, apiToken);
     }
 
     private SendMessageParams createMessage() {

@@ -26,7 +26,7 @@ public class Application {
         // Parse the command line arguments
         Arguments arguments = Arguments.parse(args);
 
-        // Prepare recorder to store reponses in a CSV file
+        // Prepare recorder to store responses in a CSV file
         File csvFile = new File(OUTPUT_CSV_FILE);
         MoodRecorder recorder = new MoodRecorder(csvFile);
 
