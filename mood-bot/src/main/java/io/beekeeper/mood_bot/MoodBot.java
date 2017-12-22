@@ -1,11 +1,11 @@
-package io.beekeeper.sample_chat_bot;
+package io.beekeeper.mood_bot;
 
 import io.beekeeper.sdk.ChatBot;
 import io.beekeeper.sdk.model.ConversationMessage;
 import io.beekeeper.sdk.model.MessageType;
 
-import static io.beekeeper.sample_chat_bot.ControlMessages.CONTROL_BAD_MOOD;
-import static io.beekeeper.sample_chat_bot.ControlMessages.CONTROL_GREAT_MOOD;
+import static io.beekeeper.mood_bot.ControlMessages.CONTROL_BAD_MOOD;
+import static io.beekeeper.mood_bot.ControlMessages.CONTROL_GREAT_MOOD;
 
 public class MoodBot extends ChatBot {
 

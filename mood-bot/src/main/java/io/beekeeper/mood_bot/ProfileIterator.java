@@ -1,4 +1,4 @@
-package io.beekeeper.sample_chat_bot;
+package io.beekeeper.mood_bot;
 
 import java.util.Iterator;
 import java.util.List;
