@@ -5,6 +5,7 @@ import org.quartz.JobExecutionContext;
 
 import io.beekeeper.sdk.BeekeeperSDK;
 import io.beekeeper.sdk.exception.BeekeeperException;
+import io.beekeeper.sdk.iterator.UserProfileIterator;
 import io.beekeeper.sdk.model.Conversation;
 import io.beekeeper.sdk.model.UserProfile;
 import io.beekeeper.sdk.params.InputPromptOptionParams;
@@ -22,11 +23,11 @@ public class SendPromptJob implements Job {
             BeekeeperSDK sdk = getSDK(context);
             SendMessageParams message = createMessage();
 
-            ProfileIterator iterator = new ProfileIterator(sdk);
+            UserProfileIterator iterator = new UserProfileIterator(sdk);
 
             // Send a message to all users
             while (iterator.hasNext()) {
-                iterator.advanceToNext();
+                iterator.advance();
                 UserProfile profile = iterator.getCurrent();
                 try {
                     Conversation conversation = sdk.getConversations().getConversationByUsername(profile.getUsername()).execute();
