@@ -1,0 +1,23 @@
+group 'io.beekeeper'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'https://s3-eu-west-1.amazonaws.com/beekeeper-marketplace-sdk/maven2/release/' }
+}
+
+dependencies {
+    // Beekeeper Chat Bot SDK
+    implementation 'io.beekeeper:chatbot-sdk:0.0.12'
+
+    // Scheduling
+    implementation 'org.quartz-scheduler:quartz:2.2.1'
+
+    // Command line parsing
+    implementation 'com.beust:jcommander:1.71'
+}
