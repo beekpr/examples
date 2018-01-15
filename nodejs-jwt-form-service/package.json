@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-jwt-html-service",
+  "version": "1.0.0",
+  "description": "A simple web application rendering html and consuming the Beekeeper Jason Web Token",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.16.0",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-jwt": "^5.1.0",
+    "pug": "^2.0.0-beta11",
+    "z-schema": "^3.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node former/index.js",
+    "validate": "node former/validate.js"
+  },
+  "author": "Beekeeper AG",
+  "license": "MIT"
+}

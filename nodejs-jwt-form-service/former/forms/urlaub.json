@@ -1,0 +1,38 @@
+{
+    "title": "Urlaub beantragen",
+    "submit": "Urlaub beantragen",
+    "recipient": "beekeeper.demo@gmail.com",
+    "success": "Ihre Anfrage wurde empfangen und wird jetzt bearbeitet. Vielen Dank!",
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "label": "Name"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "email",
+        "label": "E-Mail"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "from",
+        "label": "Von"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "until",
+        "label": "Bis"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "reason",
+        "label": "Grund"
+      }
+    ]
+  }

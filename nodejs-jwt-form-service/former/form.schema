@@ -1,0 +1,51 @@
+{
+    "description": "schema for a form",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "submit": {
+            "type": "string"
+        },
+        "recipient": {
+            "type": "string",
+            "format": "email"
+        },
+        "fields": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "tag": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "label": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "tag",
+                    "type",
+                    "name",
+                    "label"
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "title",
+        "submit",
+        "recipient",
+        "success",
+        "fields"
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "title": "Expenses",
+    "submit": "Submit expenses",
+    "recipient": "beekeeper.demo@gmail.com",
+    "success": "Thank you! Your request has been received and will be processed shortly.",
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "label": "Name"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "email",
+        "label": "E-Mail"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "date",
+        "label": "Date"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "amount",
+        "label": "Amount"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "reason",
+        "label": "Reason"
+      }
+    ]
+  }

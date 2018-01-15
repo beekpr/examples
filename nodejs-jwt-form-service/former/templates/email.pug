@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    title=form.title
+    link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-sm-offset-1
+          h1.page-header #{form.title}
+          table.table
+            thead
+              tr
+                th Field
+                th Value
+            tbody
+              each field in form.fields
+                tr
+                  td #{field.name}
+                  td #{data[field.name]}
+
+          p The user who submitted this form was identified as #{token.beekeeper_user.name} [#{token.sub}] by #{token.iss}.

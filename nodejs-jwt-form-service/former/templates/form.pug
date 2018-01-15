@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    title=form.title
+    link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-sm-offset-1
+          h1.page-header #{form.title}
+          form#form.form.form-horizontal(method='POST', action='submit')
+            input(type='hidden', name='token', value=query.token)
+            each field in form.fields
+              .form-group
+                label.col-xs-2.control-label(for=field.name) #{field.label}
+                .col-xs-10
+                  input.form-control(type=field.type, name=field.name, value=query[field.name], label=field.label)
+            button.btn.btn-default(type='submit') #{form.submit}

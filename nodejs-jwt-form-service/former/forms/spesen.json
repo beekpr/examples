@@ -1,0 +1,38 @@
+{
+    "title": "Spesen",
+    "submit": "Spesen beantragen",
+    "recipient": "beekeeper.demo@gmail.com",
+    "success": "Ihre Anfrage wurde empfangen und wird jetzt bearbeitet. Vielen Dank!",
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "label": "Name"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "email",
+        "label": "E-Mail"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "date",
+        "label": "Datum"
+      },
+      {
+        "tag": "input",
+        "type": "number",
+        "name": "amount",
+        "label": "Summe"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "reason",
+        "label": "Grund"
+      }
+    ]
+  }

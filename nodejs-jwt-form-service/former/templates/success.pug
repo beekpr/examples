@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    title=form.title
+    link(rel="stylesheet", href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-sm-offset-1
+          h1.page-header #{form.title}
+          .alert.alert-success
+            p #{form.success}

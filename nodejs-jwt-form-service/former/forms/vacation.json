@@ -1,0 +1,38 @@
+{
+    "title": "Vacation days",
+    "submit": "Submit vacation request",
+    "recipient": "beekeeper.demo@gmail.com",
+    "success": "Thank you! Your request has been received and will be processed shortly.",
+    "fields": [
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "label": "Name"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "email",
+        "label": "E-Mail"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "from",
+        "label": "From"
+      },
+      {
+        "tag": "input",
+        "type": "date",
+        "name": "until",
+        "label": "To"
+      },
+      {
+        "tag": "input",
+        "type": "text",
+        "name": "reason",
+        "label": "Reason"
+      }
+    ]
+  }
