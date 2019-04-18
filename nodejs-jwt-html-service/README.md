@@ -7,7 +7,7 @@ This microservice is based on `node` and the `express-jwt` library. The microser
 # How to run
 
 1. You will need nodejs and npm installed. To install these, please see https://nodejs.org/en/download/package-manager/. Please follow the instructions for your system.
-2. Acquire your public key and replace beekeeper_jwt.pem with your public key. Please contact customer_success@beekeper.io for your public key and the beekeeper setup
+2. Acquire your public key and replace beekeeper_jwt.pem with your public key. Please contact customer_success@beekeeper.io for your public key and the beekeeper setup
 3. Run `npm install`. This will install all the required dependencies
 4. Run `npm start`.
 
