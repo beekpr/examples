@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     // Beekeeper Chat Bot SDK
-    implementation 'io.beekeeper:chatbot-sdk:2.2.1'
+    implementation 'io.beekeeper:beekeeper-chatbot-sdk:2.3.0'
 
     // Scheduling
     implementation 'org.quartz-scheduler:quartz:2.2.1'
