@@ -6,3 +6,10 @@ This is an example project that shows how to create a serverless chatbot that in
 1. Make sure you have Node.js installed on your machine.
 2. Follow [the instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) to install the Serverless framework.
 3. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) and [configure the credentials](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+
+## Deploying
+1. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API token.
+2. Run
+``` bash
+$ serverless deploy
+```

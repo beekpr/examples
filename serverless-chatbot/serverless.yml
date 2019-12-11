@@ -1,0 +1,20 @@
+service: serverless-chatbot
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+  iamManagedPolicies:
+    - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+
+  environment:
+    BEEKEEPER_TENANT_URL: ${file(./config.yml):tenantUrl}
+    BEEKEEPER_API_TOKEN: ${file(./config.yml):apiToken}
+
+functions:
+  messageReceived:
+    handler: handler.messageReceived
+    events:
+      - http:
+          path: message-received
+          method: post
