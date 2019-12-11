@@ -1,0 +1,14 @@
+{
+  "name": "serverless-chatbot",
+  "version": "1.0.0",
+  "description": "Example bot implementation that uses Beekeeper API webhooks",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "beekeeper": "^0.4.1"
+  }
+}
