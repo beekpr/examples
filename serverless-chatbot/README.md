@@ -1,6 +1,6 @@
 # Serverless Chatbot
 
-This is an example project that shows how to create a serverless chatbot that interacts with Beekeeper users and is triggered by `CHATS.MESSAGE.CREATED` webhook event.
+This is an example project that shows how to create a serverless chatbot that interacts with Beekeeper users and is triggered by `CHATS.MESSAGE.CREATED` webhook event. It's a simple ping-pong bot that repeats everything you say.
 
 ## Prerequisites 
 1. Make sure you have Node.js installed on your machine.
@@ -37,4 +37,9 @@ This is an example project that shows how to create a serverless chatbot that in
    ```
     npm run create-webhook `https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`
    ```
-5. Check if the bot works! Try writing him a message an see if it responds. You can also visit AWS Lambda Management Console to see your function logs.
+5. Check if the bot works! Try writing him a message and see if it responds. You can also visit AWS Lambda Management Console to see your function logs.
+
+## See also
+* [Beekeeper Developer Portal](https://developers.beekeeper.io/)
+* [Getting started with Beekeeper webhooks](https://developers.beekeeper.io/v2/welcome/webhooks)
+* [Beekeeper webhooks API docs](https://developers.beekeeper.io/v2/webhooks/list-all-registered-webhooks)
