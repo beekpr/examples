@@ -4,11 +4,15 @@
   "description": "Example bot implementation that uses Beekeeper API webhooks",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create-webhook": "node utils/createWebhook.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "beekeeper": "^0.4.1"
+  },
+  "devDependencies": {
+    "yaml": "^1.7.2",
+    "node-fetch": "^2.6.0"
   }
 }

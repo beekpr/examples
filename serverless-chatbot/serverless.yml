@@ -13,7 +13,7 @@ provider:
 
 functions:
   messageReceived:
-    handler: handler.messageReceived
+    handler: src/handler.handleMessageReceived
     events:
       - http:
           path: message-received
