@@ -1,0 +1,18 @@
+{
+  "name": "serverless-chatbot",
+  "version": "1.0.0",
+  "description": "Example bot implementation that uses Beekeeper API webhooks",
+  "main": "handler.js",
+  "scripts": {
+    "create-webhook": "node utils/createWebhook.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "beekeeper": "^0.4.1"
+  },
+  "devDependencies": {
+    "yaml": "^1.7.2",
+    "node-fetch": "^2.6.0"
+  }
+}
