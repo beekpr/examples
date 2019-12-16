@@ -5,7 +5,7 @@ This is an example project that shows how to create a serverless chatbot that in
 ## Prerequisites 
 1. Make sure you have Node.js installed on your machine.
 2. Follow [the instructions](https://serverless.com/framework/docs/providers/aws/guide/installation/) to install the Serverless framework.
-3. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) and [configure the credentials](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
+3. Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) and [configure the credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 4. You need access to Beekeeper tenant and a bot account. Instructions on how to create a bot account can be found [here](https://adminhelp.beekeeper.io/hc/en-us/articles/360002574420-Creating-Bot-Accounts).
 
 ## Deploying
@@ -35,9 +35,11 @@ This is an example project that shows how to create a serverless chatbot that in
     * call our API [POST /webhooks](https://developers.beekeeper.io/v2/webhooks/register-a-new-webhook) endpoint manually using your bot's API token
     * use the script provided in this repo for your convenience:
    ```
-    npm run create-webhook `https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`
+    npm install
+    npm run create-webhook 'https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received'
    ```
-5. Check if the bot works! Try writing him a message and see if it responds. You can also visit AWS Lambda Management Console to see your function logs.
+5. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
+[AWS Lambda Management Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions) to see your function logs.
 
 ## See also
 * [Beekeeper Developer Portal](https://developers.beekeeper.io/)

@@ -20,8 +20,13 @@ fetch(`${tenantUrl}/api/2/webhooks`, {
     })
 })
     .then(response => {
-        console.log("Webhook created!");
         console.debug(response);
+
+        if (response.status === 201) {
+            console.log("Webhook created!");
+        } else {
+            console.log("Error creating a webhook");
+        }
     })
     .catch(err => {
         console.error(err);
