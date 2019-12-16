@@ -9,12 +9,14 @@ This is an example project that shows how to create a serverless chatbot that in
 4. You need access to Beekeeper tenant and a bot account. Instructions on how to create a bot account can be found [here](https://adminhelp.beekeeper.io/hc/en-us/articles/360002574420-Creating-Bot-Accounts).
 
 ## Deploying
-1. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API bot token.
-2. Run
+1. Clone this repo (`git clone https://github.com/beekpr/examples.git`) and go into `serverless-chatbot` directory.
+2. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API bot token.
+3. Run
     ``` bash
     $ serverless deploy
     ```
-3. The terminal output should look something like this:
+    in your terminal.
+4. The terminal output should look something like this:
     ```
     (...)
     Service Information
@@ -31,14 +33,14 @@ This is an example project that shows how to create a serverless chatbot that in
      messageReceived: serverless-chatbot-dev-messageReceived
     (...)
     ```
- 4. Copy the trigger URL (`https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`) and use it to register a webhook. You can
+5. Copy the trigger URL (`https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`) and use it to register a webhook. You can
     * call our API [POST /webhooks](https://developers.beekeeper.io/v2/webhooks/register-a-new-webhook) endpoint manually using your bot's API token
     * use the script provided in this repo for your convenience:
    ```
     npm install
     npm run create-webhook 'https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received'
    ```
-5. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
+6. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
 [AWS Lambda Management Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions) to see your function logs.
 
 ## See also
