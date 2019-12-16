@@ -9,7 +9,7 @@ This is an example project that shows how to create a serverless chatbot that in
 4. You need access to Beekeeper tenant and a bot account. Instructions on how to create a bot account can be found [here](https://adminhelp.beekeeper.io/hc/en-us/articles/360002574420-Creating-Bot-Accounts).
 
 ## Deploying
-1. Clone this repo `git clone https://github.com/beekpr/examples.git` and go into `serverless-chatbot` directory.
+1. Clone this repo (`git clone https://github.com/beekpr/examples.git`) and go into `serverless-chatbot` directory.
 2. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API bot token.
 3. Run
     ``` bash
