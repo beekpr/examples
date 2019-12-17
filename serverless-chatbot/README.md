@@ -42,7 +42,6 @@ This is an example project that shows how to create a serverless chatbot that in
     * call our API [POST /webhooks](https://developers.beekeeper.io/v2/webhooks/register-a-new-webhook) endpoint manually using your bot's API token
     * use the script provided in this repo for your convenience:
    ```
-    npm install
     npm run create-webhook 'https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received'
    ```
 7. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
