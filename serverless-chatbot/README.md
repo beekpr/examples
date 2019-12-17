@@ -11,13 +11,17 @@ This is an example project that shows how to create a serverless chatbot that in
 ## Deploying
 1. Clone this repo (`git clone https://github.com/beekpr/examples.git`) and go into `serverless-chatbot` directory.
 2. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API bot token.
-3. Run
+3. Install the required dependencies by running
     ``` bash
-    npm install
-    serverless deploy
+    $ npm install
     ```
     in your terminal.
-4. The terminal output should look something like this:
+4. Run
+    ``` bash
+    $ serverless deploy
+    ```
+    to deploy function.
+5. The terminal output should look something like this:
     ```
     (...)
     Service Information
@@ -34,13 +38,13 @@ This is an example project that shows how to create a serverless chatbot that in
      messageReceived: serverless-chatbot-dev-messageReceived
     (...)
     ```
-5. Copy the trigger URL (`https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`) and use it to register a webhook. You can
+6. Copy the trigger URL (`https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received`) and use it to register a webhook. You can
     * call our API [POST /webhooks](https://developers.beekeeper.io/v2/webhooks/register-a-new-webhook) endpoint manually using your bot's API token
     * use the script provided in this repo for your convenience:
    ```
     npm run create-webhook 'https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received'
    ```
-6. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
+7. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
 [AWS Lambda Management Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions) to see your function logs.
 
 ## See also
