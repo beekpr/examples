@@ -13,7 +13,8 @@ This is an example project that shows how to create a serverless chatbot that in
 2. Copy `config.yml.sample` file as `config.yml` and fill in Beekeeper tenant URL and API bot token.
 3. Run
     ``` bash
-    $ serverless deploy
+    npm install
+    serverless deploy
     ```
     in your terminal.
 4. The terminal output should look something like this:
@@ -37,7 +38,6 @@ This is an example project that shows how to create a serverless chatbot that in
     * call our API [POST /webhooks](https://developers.beekeeper.io/v2/webhooks/register-a-new-webhook) endpoint manually using your bot's API token
     * use the script provided in this repo for your convenience:
    ```
-    npm install
     npm run create-webhook 'https://someurl.execute-api.us-east-1.amazonaws.com/dev/message-received'
    ```
 6. Check if it works! Try writing a message to the bot and see if it responds. You can also visit
