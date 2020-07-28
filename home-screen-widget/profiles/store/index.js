@@ -2,6 +2,14 @@ import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
 const PROFILE_LIMIT = 50;
 
+/**
+ * Step 4
+ *
+ * Our profile widget will use the beekeeper sdk to fetch the first 50 user profiles
+ * and display them in the widget. We do this here in the store.
+ * Once the profiles are loaded we need to communicate the state change to the home screen.
+ * For that we created the 'initialized' state variable that the widget can watch.
+ */
 export default {
     namespaced: true,
     state: () => ({
