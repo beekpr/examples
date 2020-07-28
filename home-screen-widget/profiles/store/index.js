@@ -1,9 +1,7 @@
 import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
-const PROFILE_LIMIT = 50;
-
 /**
- * Step 4
+ * Step 4: Fetch tenant data with the Beekeeper SDK
  *
  * Our profile widget will use the beekeeper sdk to fetch the first 50 user profiles
  * and display them in the widget. We do this here in the store.
@@ -29,9 +27,9 @@ export default {
             await dispatch('fetchProfiles');
             commit('FINISH_INIT');
         },
-        async fetchProfiles({ commit }) {
+        async fetchProfiles({ commit }, maxNumberOfFetchedProfiles) {
             try {
-                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list({ limit: PROFILE_LIMIT });
+                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list({ limit: maxNumberOfFetchedProfiles });
                 commit('SET_PROFILES', { profiles });
             } catch (error) {
                 // eslint-disable-next-line no-console

@@ -6,7 +6,7 @@ import { initI18n } from '~/shared/i18n';
 
 const BeekeeperMobileBridge = BeekeeperHomeScreen.bridge;
 /**
- * Step 2
+ * Step 2: Register widget component
  *
  * This is the entry point of your widget and here we need to register
  * the component with its widget id into the home screen
