@@ -1,5 +1,6 @@
-# HOME SCREEN
-The home screen is a feature that surfaces relevant information by displaying a list of widgets in a new main tab on the mobile clients. This gives people effortless access to tools and information that are contextually relevant to their work. 
+# HOME
+Home is a feature that surfaces relevant information by displaying a list of widgets in a new main tab on the mobile clients. 
+This gives people effortless access to tools and information that are contextually relevant to their work. 
 
 ## Contents
 
@@ -56,7 +57,7 @@ BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
 
 #### Sending events to the home screen 
 
-Widgets can communicate to the home screen by triggering events. 
+Widgets can communicate with the home screen by triggering events. 
 
 ```javascript 
   triggerEvent(
@@ -76,7 +77,7 @@ For example this is how we trigger the LOADED event in the [example widget](http
 
 #### Calling Beekeeper SDK
 
-The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-sdk) gives access to tenant data such as messages, profiles, streams. 
+The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-sdk) gives access to tenant data such as messages, profiles or streams. 
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
@@ -122,7 +123,7 @@ TODO
 
 ## 3. Configuring the home screen for a tenant
 The home screen and the widgets can be configured.\
-Configuring a tenant's home screen means mainly adding and removing widgets for the home screen. \
+Configuring a tenant's home screen means adding and removing widgets for the home screen. \
 Configuring a widget means specifying possible input parameter that the widget might have and modifying access permission to the widget so that it's just visible to a subset of users. 
 
 

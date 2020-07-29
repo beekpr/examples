@@ -5,6 +5,7 @@ By calling these methods, you will receive a promise resolving with the result o
 ``sdk.Messages.create(message)`` creates a new message 
 #### Profiles
 ``sdk.Profiles.get(username)`` gets a profile by username
+``sdk.Profiles.get(id)`` gets a profile by id
 ``sdk.Profiles.list(filter)`` returns a list of users with optional filter that can be {limit: 50}. \
 This is an **ADMIN** resource.
 #### Conversations
