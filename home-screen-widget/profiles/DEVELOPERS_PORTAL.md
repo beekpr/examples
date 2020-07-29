@@ -9,7 +9,7 @@ The home screen is a feature that surfaces relevant information by displaying a 
 3. Configuring the home screen for a tenant
 
 
-## 2. Architecture
+## 1. Architecture
 
 The home screen consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
 From an architecture perspective the home screen can be split into 4 logical components: 
@@ -103,10 +103,10 @@ Here we fetch the device locale in order to initialize the translation library.
 
 ## 2. Home screen widget development
 
-### 1.1. Set up local development environment 
+### 2.1. Set up local development environment 
 TODO
 
-### 1.2 Profiles example widget
+### 2.2 Profiles example widget
 
 In order to facilitate the development of third-party widgets we created an example widget. 
 The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display's user profiles. 
@@ -116,7 +116,7 @@ Make sure to follow the instruction steps in code to find the essential bits and
 The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
 
 
-### 1.3 Publishing a widget
+### 2.3 Publishing a widget
 
 TODO
 
