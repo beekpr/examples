@@ -23,13 +23,13 @@ export default {
         },
     },
     actions: {
-        async init({ dispatch, commit }) {
-            await dispatch('fetchProfiles');
+        async init({ dispatch, commit }, maxNumberOfFetchedProfiles) {
+            await dispatch('fetchProfiles', { limit: maxNumberOfFetchedProfiles });
             commit('FINISH_INIT');
         },
-        async fetchProfiles({ commit }, maxNumberOfFetchedProfiles) {
+        async fetchProfiles({ commit }, limit) {
             try {
-                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list({ limit: maxNumberOfFetchedProfiles });
+                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list({ limit: limit });
                 commit('SET_PROFILES', { profiles });
             } catch (error) {
                 // eslint-disable-next-line no-console

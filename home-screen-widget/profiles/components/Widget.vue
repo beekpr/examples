@@ -90,8 +90,7 @@ export default {
         this.$store.registerModule(WIDGET_ID, store, { preserveState: false });
     },
     created() {
-        this.initStore();
-        this.fetchProfiles(this.maxNumberOfDisplayedProfiles);
+        this.initStore(this.maxNumberOfDisplayedProfiles);
     },
     methods: {
         ...mapActions({
