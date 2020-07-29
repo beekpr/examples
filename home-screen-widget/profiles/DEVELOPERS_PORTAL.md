@@ -16,10 +16,10 @@ From an architecture perspective the home screen can be split into 4 logical com
 
 1. **Home screen**: a hybrid app that is in charge of fetching the home screen configuration for the tenant and dynamically displaying the widgets.
 2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend reading up on it [ here](https://vuejs.org/v2/guide/).
-3. **Configurations**: Tenant admins can not only configure which widgets are shown on the home screen but also specify input parameters to the widgets themselves. Configuration are also loaded by the home screen on start up.  
+3. **Configurations**: Tenant admins can not only configure which widgets are shown on the home screen but also specify input parameters to the widgets themselves. Configurations are also loaded by the home screen on start up.  
 4. **HomeScreenSDK**: an SDK that glues everything together by allowing widgets to: 
     * Register themselves onto the home screen
-    * Access the BeekeeperSDK
+    * Access the [Beekeeper Javascript SDK](https://developers.beekeeper.io/v2/welcome/javascript-sdk)
     * Access the mobile bridge (TODO: add link to separate page)
     * Send events from the widgets to the home screen
 
@@ -57,7 +57,7 @@ BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
 
 **Sending events to the home screen**
 
-Widgets can communiccate to the homescreen by triggering events. 
+Widgets can communicate to the home screen by triggering events. 
 
 ```javascript 
   triggerEvent(
@@ -67,9 +67,9 @@ Widgets can communiccate to the homescreen by triggering events.
   ): void;
 
 ```
-example: 
+ 
 
-Here the trigger the LOADED event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
+For example this is how we trigger the LOADED event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
 ```javascript 
   import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
   BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
@@ -77,7 +77,7 @@ Here the trigger the LOADED event in the [example widget](https://github.com/bee
 
 **Calling the Javascript SDK API**
 
-The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-sdk) gives access to tenant data such as messages, profiles, streams through an API. 
+The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-sdk) gives access to tenant data such as messages, profiles, streams. 
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
