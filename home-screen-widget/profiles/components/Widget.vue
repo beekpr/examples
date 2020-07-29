@@ -21,8 +21,10 @@ import store from '~/profiles/store';
  *
  * This is the vue component of your widget that will be loaded onto the home screen.
  * In order for the home screen to be aware of the widget we need to register it. That's why we defined here
- * a unique widget string id that will identify our widget type.
+ * a unique widget string id that will identify our widget type in the Beekeeper ecosystem.
  * We called it 'profiles' since this is the profiles widget.
+ * See also the "Widget type" in "Configuration" section
+ * on the developers portal {@link https://developers.beekeeper.io/v2/welcome/home-screen}
  */
 export const WIDGET_ID = 'profiles';
 export const PROFILE_LIMIT = 50;
