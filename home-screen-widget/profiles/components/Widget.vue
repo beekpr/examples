@@ -48,7 +48,7 @@ export default {
         },
 
         /**
-         * Step 6: Define customizable input props
+         * Step 7: Define customizable input props (Optional)
          *
          * Every widget can have input properties that be customized by admins.
          * In this example for different widget instances one might want to display more or less profiles.
@@ -68,7 +68,7 @@ export default {
     },
     watch: {
         /**
-         * Step 5: Trigger LOADED event
+         * Step 6: Trigger LOADED event
          *
          * Once the profiles are successfully loaded we notify the home screen by triggering an event
          * that contains the event type and the widget instance id
@@ -80,6 +80,13 @@ export default {
         },
     },
     beforeCreate() {
+        /**
+         * Step 4: Register widget store module
+         *
+         * In order for Vuex to be aware of this store, we need to register it upon widget creation.
+         * When the module is registered, all of its getters, actions and mutations will be automatically
+         * namespaced based on the path the module is registered at.
+         */
         this.$store.registerModule(WIDGET_ID, store, { preserveState: false });
     },
     created() {

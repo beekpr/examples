@@ -1,7 +1,7 @@
 import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
 /**
- * Step 4: Fetch tenant data with the Beekeeper SDK
+ * Step 5: Fetch tenant data with the Beekeeper SDK
  *
  * Our profile widget will use the beekeeper sdk to fetch the first 50 user profiles
  * and display them in the widget. We do this here in the store.
