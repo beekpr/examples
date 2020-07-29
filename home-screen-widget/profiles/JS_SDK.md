@@ -1,6 +1,6 @@
 ### Javascript SDK API
 
-By calling these methods, you will receive a promise resolving with a the result of the operation.
+By calling these methods, you will receive a promise resolving with the result of the operation.
 #### Messages
 ``sdk.Messages.create(message)`` creates a new message 
 #### Profiles

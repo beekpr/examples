@@ -1,5 +1,4 @@
-#  TODO
-# Home screen
+# HOME SCREEN
 The home screen is a feature that surfaces relevant information by displaying a list of widgets in a new main tab on the mobile clients. This gives people effortless access to tools and information that are contextually relevant to their work. 
 
 ## Contents
@@ -15,7 +14,7 @@ The home screen consists of a hybrid app which is displayed in a web view on the
 From an architecture perspective the home screen can be split into 4 logical components: 
 
 1. **Home screen**: a hybrid app that is in charge of fetching the home screen configuration for the tenant and dynamically displaying the widgets.
-2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend reading up on it [ here](https://vuejs.org/v2/guide/).
+2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend reading up on it [here](https://vuejs.org/v2/guide/).
 3. **Configurations**: Tenant admins can not only configure which widgets are shown on the home screen but also specify input parameters to the widgets themselves. Configurations are also loaded by the home screen on start up.  
 4. **HomeScreenSDK**: an SDK that glues everything together by allowing widgets to: 
     * Register themselves onto the home screen
@@ -23,9 +22,9 @@ From an architecture perspective the home screen can be split into 4 logical com
     * Access the mobile bridge (TODO: add link to separate page)
     * Send events from the widgets to the home screen
 
-### HomeScreenSKD 
+### HomeScreenSDK
 
-**Installation**
+#### Installation
 
 To install the HomeScreenSDK simply add it as a dependency to your `package.json` file. 
 
@@ -37,15 +36,15 @@ To install the HomeScreenSDK simply add it as a dependency to your `package.json
 }
 ```
 
-**Registering a widget**
+#### Registering a widget
 
-When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the widgetTypeId is a unique identifier for the widget (e.g. the Streams widget has id 'streams').
+When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the `widgetTypeId` is a unique identifier for the widget (e.g. the Streams widget has id 'streams').
 
 ```javascript
 registerWidget(widgetTypeId: string, widgetComponent: Component): void;
 ```
 
-example: 
+##### example: 
 
 ```javascript
 import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
@@ -55,7 +54,7 @@ BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
 ```
 
 
-**Sending events to the home screen**
+#### Sending events to the home screen 
 
 Widgets can communicate to the home screen by triggering events. 
 
@@ -75,7 +74,7 @@ For example this is how we trigger the LOADED event in the [example widget](http
   BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
 ```
 
-**Calling the Javascript SDK API**
+#### Calling Beekeeper SDK
 
 The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-sdk) gives access to tenant data such as messages, profiles, streams. 
 
@@ -87,13 +86,13 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
   BeekeeperHomeScreen.sdk.Profiles.list({ limit: 50 });
 ```
 
-**Accessing the mobile bridge**
+#### Accessing the mobile bridge
  
 The [mobile bridge](https://developers.beekeeper.io/v2/welcome/mobile-bridge) enables the interaction of a hybrid feature with the native host application (i.e., the Android or iOS app) via the Beekeeper Bridge.
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
-```javascript 
+``` 
   import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
   ...
   const BeekeeperMobileBridge = BeekeeperHomeScreen.bridge;
@@ -109,7 +108,7 @@ TODO
 ### 2.2 Developing a new widget
 
 In order to facilitate the development of third-party widgets we created an example widget. 
-The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display's user profiles. 
+The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display user profiles. 
 
 Make sure to follow the instruction steps in the code to find the essential bits and pieces. 
 
@@ -122,9 +121,9 @@ TODO
 
 
 ## 3. Configuring the home screen for a tenant
-The home screen and the widgets can be configured by the tenants.\
-Configuring a tenant's homescreen means mainly adding and removing widgets for the homescreen. \
-Configuring a widget means specifying possible input parameter that the widget might have and modifying access permission to the widget so that it's just visible by a subset of users. 
+The home screen and the widgets can be configured.\
+Configuring a tenant's home screen means mainly adding and removing widgets for the home screen. \
+Configuring a widget means specifying possible input parameter that the widget might have and modifying access permission to the widget so that it's just visible to a subset of users. 
 
 
 To configure the home screen we have three main entities: 
@@ -134,7 +133,7 @@ To configure the home screen we have three main entities:
 Every new widget developed by Beekeeper or by third party developers must be defined and registered as a widget type. 
 
 A widget type is defined by: 
-* `type`: The unique name of the widget type e.g. ("streams" for the Streams widget)
+* `type`: The unique name of the widget type, e.g. ("streams" for the Streams widget)
 * `propertiesSchema`: a dictionary of input properties that can be configured and which represents the customizable input data for the widget
 * `url`: The relative url path to fetch the widget
 * `featureFlags`: The necessary feature flags that the user has to have in order for the widget to be displayed
@@ -146,7 +145,7 @@ E.g.
 {
   "type": "shortcuts",
   "url": "/home-screen-core-widgets/js/streams.js",
-  "featureFlags": [streams],
+  "featureFlags": ['streams'],
   "propertiesSchema": {
     "pinnedStreams": {
       "$id": "#/propertiesSchema/pinnedStreams",
@@ -237,14 +236,13 @@ For instance a widget configuration containing the configured streams and the sh
 
 
 ### Access management (ACL)
-Widgets access can be modified in order t
+Widgets access can be modified in order to make limit the visibility of a widget to a subset of users.
 
 #### Fetching the acl
-Every entity has acl associcated to it. These can be accessed by following the acl url in `rels` in order to get them
+Every entity has an acl associated to it. These can be accessed by following the acl url in `rels` in order to get them.
 
 #### Updating the acl 
-Entity access can be  by following the acl url in `rels` in order to get them
-
+Entity access can be updated by following the acl url in `rels`.
 
 ## Operations
 
@@ -336,7 +334,7 @@ which returns:
 ``` 
 POST home-screen/configuration/widgets
 Host: <your_subdomain>.beekeeper.io
-Authorization: Token b1edcre4-d128-4g1a-br5v-a495d00e0j41
+Authorization: Token <<your_api_token>>
 Content-Type: application/json
 ```
 with a body of, for example:
