@@ -9,7 +9,6 @@ The home screen is a feature that surfaces relevant information by displaying a 
 3. Configuring the home screen for a tenant
 
 
-
 ## 2. Architecture
 
 The home screen consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
@@ -19,20 +18,16 @@ From an architecture perspective the home screen can be split into 4 logical com
 2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend reading up on it [ here](https://vuejs.org/v2/guide/).
 3. **Configurations**: Tenant admins can not only configure which widgets are shown on the home screen but also specify input parameters to the widgets themselves. Configuration are also loaded by the home screen on start up.  
 4. **HomeScreenSDK**: an SDK that glues everything together by allowing widgets to: 
-    * Register themselve onto the home screen
+    * Register themselves onto the home screen
     * Access the BeekeeperSDK
-    * Access the mobile bridge
+    * Access the mobile bridge (TODO: add link to separate page)
     * Send events from the widgets to the home screen
 
-
-### HomeScreenSKD
-
-The HomeScreenSDK must be used within the widgets components in order to be integrated into  the homescreen. 
+### HomeScreenSKD 
 
 **Installation**
 
 To install the HomeScreenSDK simply add it as a dependency to your `package.json` file. 
-
 
 ```json
 {
@@ -44,7 +39,7 @@ To install the HomeScreenSDK simply add it as a dependency to your `package.json
 
 **Registering a widget**
 
-When we register a widget we make the widget component known to the homescreen. The widget component is the Vue.js component and the widgetTypeId is a unique identifier for the widget (e.g. the Streams widget).
+When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the widgetTypeId is a unique identifier for the widget (e.g. the Streams widget has id 'streams').
 
 ```javascript
 registerWidget(widgetTypeId: string, widgetComponent: Component): void;
@@ -57,7 +52,6 @@ import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
 import component, { WIDGET_ID } from '~/profiles/components/Widget.vue';
 BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
-
 ```
 
 
@@ -111,18 +105,13 @@ Here we fetch the device locale in order to initialize the translation library.
 
 ### 1.1. Set up local development environment 
 TODO
- - Have a test tenant 
- - Admin 
- - ...
- 
-
 
 ### 1.2 Profiles example widget
 
 In order to facilitate the development of third-party widgets we created an example widget. 
 The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display's user profiles. 
 
-Make sure the to follow the instruction steps in code to find the essential bits and pieces. 
+Make sure to follow the instruction steps in code to find the essential bits and pieces. 
 
 The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
 
