@@ -20,9 +20,9 @@ import store from '~/profiles/store';
  *
  *
  * This is the vue component of your widget that will be loaded onto the home screen.
- * In order for the home screen to be aware of  the widget we need to register it. That's why we defined here
+ * In order for the home screen to be aware of the widget we need to register it. That's why we defined here
  * a unique widget string id that will identify our widget type.
- * We called it 'profiles' since this is the profiles widget
+ * We called it 'profiles' since this is the profiles widget.
  */
 export const WIDGET_ID = 'profiles';
 export const PROFILE_LIMIT = 50;
@@ -37,7 +37,7 @@ export default {
     /**
      * Step 3: Add widgetInstanceId prop
      *
-     * Once the widget is registered, the home screen will try to instantiate it and assign and instance id.
+     * Once the widget is registered, the home screen will try to instantiate it and assign an instance id.
      * This will be used by the home screen to manage all widgets and listen to events.
      * In order for this to work, we therefore need a vue prop called 'widgetInstanceId'.
      */
@@ -51,7 +51,7 @@ export default {
          * Step 7: Define customizable input props (Optional)
          *
          * Every widget can have input properties that be customized by admins.
-         * In this example for different widget instances one might want to display more or less profiles.
+         * In this example for different widget instances one might want to display more or fewer profiles.
          * The default is now set to 50.
          *
          */
@@ -60,7 +60,7 @@ export default {
             required: false,
             default() {
                 return PROFILE_LIMIT;
-            }
+            },
         },
     },
     computed: {
