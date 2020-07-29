@@ -13,4 +13,3 @@ This is an **ADMIN** resource.
 ``sdk.Posts.create(post)`` create a new post
 #### Streams
 ``sdk.Streams.list()`` gets a list of streams
-Fetching 50 profiles
