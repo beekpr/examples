@@ -11,7 +11,7 @@ This gives people effortless access to tools and information that are contextual
 
 ## 1. Architecture
 
-The home screen consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
+Home or the home screen (as we call it in the code) consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
 From an architecture perspective the home screen can be split into 4 logical components: 
 
 1. **Home screen**: a hybrid app that is in charge of fetching the home screen configuration for the tenant and dynamically displaying the widgets.
