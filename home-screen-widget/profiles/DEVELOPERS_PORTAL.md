@@ -4,12 +4,12 @@ This gives people effortless access to tools and information that are contextual
 
 ## Contents
 
-1. Architecture
-2. Home screen widget development
-3. Configuring the home screen for a tenant
+1. [Architecture](#Achitecture)
+2. [Home screen widget development](#2Home screen widget development)
+3. [Configuring the home screen for a tenant](#Configuring the home screen for a tenant)
 
 
-## 1. Architecture
+## Architecture
 
 Home or the home screen (as we call it in the code) consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
 From an architecture perspective the home screen can be split into 4 logical components: 
@@ -39,7 +39,7 @@ To install the HomeScreenSDK simply add it as a dependency to your `package.json
 
 #### Registering a widget
 
-When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the `widgetTypeId` is a unique identifier for the widget (e.g. the Streams widget has id `streams`).
+When you register a widget you make the widget component known to the home screen. The widget component is the Vue.js component and the `widgetTypeId` is a unique identifier for the widget (e.g. the Streams widget has id `streams`).
 
 ```javascript
 registerWidget(widgetTypeId: string, widgetComponent: Component): void;
@@ -69,7 +69,7 @@ Widgets can communicate with the home screen by triggering events.
 ```
  
 
-For example this is how we trigger the `LOADED` event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
+For example this is how you trigger the `LOADED` event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
 ```javascript:title=home-screen-widget/components/Widget.js
   import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
   BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId); // highlight-line
@@ -101,14 +101,14 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 ```
 Here we fetch the device locale in order to initialize the translation library. 
 
-## 2. Home screen widget development
+## Home screen widget development
 
-### 2.1. Set up local development environment 
+### Set up local development environment 
 TODO
 
-### 2.2 Developing a new widget
+### Developing a new widget
 
-In order to facilitate the development of third-party widgets we created an example widget. 
+In order to ease the development of third-party widgets we created an example widget. 
 The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display user profiles. 
 
 Make sure to follow the instruction steps in the code to find the essential bits and pieces. 
@@ -116,18 +116,18 @@ Make sure to follow the instruction steps in the code to find the essential bits
 The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
 
 
-### 2.3 Publishing a widget
+### Publishing a widget
 
 TODO
 
 
-## 3. Configuring the home screen for a tenant
+## Configuring the home screen for a tenant
 The home screen and the widgets can be configured.\
 Configuring a tenant's home screen means adding and removing widgets for the home screen. \
 Configuring a widget means specifying possible input parameter that the widget might have and modifying access permission to the widget so that it's just visible to a subset of users. 
 
 
-To configure the home screen we have three main entities: 
+To configure the home screen you have three main entities: 
 **widget type**, **widget configuration** and **home screen configuration**. 
 
 #### Widget Type
