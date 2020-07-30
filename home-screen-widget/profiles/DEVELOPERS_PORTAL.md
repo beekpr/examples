@@ -20,7 +20,7 @@ From an architecture perspective the home screen can be split into 4 logical com
 4. **HomeScreenSDK**: an SDK that glues everything together by allowing widgets to: 
     * Register themselves onto the home screen
     * Access the [Beekeeper Javascript SDK](https://developers.beekeeper.io/v2/welcome/javascript-sdk)
-    * Access the mobile bridge (TODO: add link to separate page)
+    * Access the mobile bridge
     * Send events from the widgets to the home screen
 
 ### HomeScreenSDK
