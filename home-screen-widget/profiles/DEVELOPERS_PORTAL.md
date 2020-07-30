@@ -103,10 +103,10 @@ Here we fetch the device locale in order to initialize the translation library.
 
 ## Home screen widget development
 
-### Set up local development environment 
+### 1. Set up local development environment 
 TODO
 
-### Developing a new widget
+### 2. Develop a new widget
 
 In order to ease the development of third-party widgets we created an example widget. 
 The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display user profiles. 
@@ -116,7 +116,7 @@ Make sure to follow the instruction steps in the code to find the essential bits
 The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
 
 
-### Publishing a widget
+### 3. Publish your widget
 
 TODO
 
