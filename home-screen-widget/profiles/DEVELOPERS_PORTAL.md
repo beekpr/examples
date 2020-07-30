@@ -4,12 +4,12 @@ This gives people effortless access to tools and information that are contextual
 
 ## Contents
 
-1. [Architecture](#architecture)
-2. [Home screen widget development](#home-screen-widget-development)
-3. [Configuring the home screen for a tenant](#configuring-the-home-screen-for-a-tenant)
+1. [Architecture](#1-architecture)
+2. [Home screen widget development](#2-home-screen-widget-development)
+3. [Configuring the home screen for a tenant](#3-configuring-the-home-screen-for-a-tenant)
 
 
-## Architecture
+## 1. Architecture
 
 Home or the home screen (as we call it in the code) consists of a hybrid app which is displayed in a web view on the native clients (Android, iOS).
 From an architecture perspective the home screen can be split into 4 logical components: 
@@ -101,7 +101,7 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 ```
 Here we fetch the device locale in order to initialize the translation library. 
 
-## Home screen widget development
+## 2. Home screen widget development
 
 ### 1. Set up local development environment 
 TODO
@@ -121,7 +121,7 @@ The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/h
 TODO
 
 
-## Configuring the home screen for a tenant
+## 3. Configuring the home screen for a tenant
 The home screen and the widgets can be configured.\
 Configuring a tenant's home screen means adding and removing widgets for the home screen. \
 Configuring a widget means specifying possible input parameter that the widget might have and modifying access permission to the widget so that it's just visible to a subset of users. 
