@@ -12,7 +12,7 @@ please visit our [developer portal](https://developers.beekeeper.io/v2/welcome/h
 
 ## Limitations
 
-* The home screen only supports widgets developed using the [Vue.js](https://vuejs.org/) and [Vuex](https://vuex.vuejs.org/) framework. To find out more about Vue.js click [here](https://vuejs.org/v2/guide/)
+* The home screen only supports widgets developed using the [Vue 2](https://vuejs.org/) and [Vuex 3](https://vuex.vuejs.org/) frameworks. To find out more about Vue.js click [here](https://vuejs.org/v2/guide/)
 
 ## Required Steps
  
