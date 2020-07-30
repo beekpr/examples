@@ -47,7 +47,7 @@ registerWidget(widgetTypeId: string, widgetComponent: Component): void;
 
 ##### example: 
 
-```javascript:title=home-screen-widget/main.js
+```javascript
 import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
 import component, { WIDGET_ID } from '~/profiles/components/Widget.vue';
@@ -70,7 +70,7 @@ Widgets can communicate with the home screen by triggering events.
  
 
 For example this is how you trigger the `LOADED` event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
-```javascript:title=home-screen-widget/components/Widget.js
+```javascript
   import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
   BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId); // highlight-line
 ```
@@ -81,7 +81,7 @@ The [Javascript SDK API](https://developers.beekeeper.io/v2/welcome/javascript-s
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
-```javascript:title=home-screen-widget/store/index.js 
+```javascript
   import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
   ...
   BeekeeperHomeScreen.sdk.Profiles.list({ limit: 50 }); // highlight-line
@@ -94,7 +94,7 @@ Through the bridge your widget gets access among others to the tenant object, th
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
-```javascript:title=home-screen-widget/main.js 
+```javascript
   import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
   ...
   const BeekeeperMobileBridge = BeekeeperHomeScreen.bridge; // highlight-line
@@ -408,4 +408,3 @@ with body:
 
 * `resource_type` can be `group`, `org_unit`, `tenant`
 * `role` can be `group_member`, `group_admin`, `tenant.member`, `org_unit.member`, `org_unit.admin`
-*
