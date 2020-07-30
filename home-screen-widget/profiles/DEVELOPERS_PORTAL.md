@@ -4,9 +4,9 @@ This gives people effortless access to tools and information that are contextual
 
 ## Contents
 
-1. [Architecture](#Architecture)
-2. [Home screen widget development](#Home screen widget development)
-3. [Configuring the home screen for a tenant](#Configuring the home screen for a tenant)
+1. [Architecture](#architecture)
+2. [Home screen widget development](#home-screen-widget-development)
+3. [Configuring the home screen for a tenant](#configuring-the-home-screen-for-a-tenant)
 
 
 ## Architecture
