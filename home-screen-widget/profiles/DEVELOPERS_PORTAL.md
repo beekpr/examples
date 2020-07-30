@@ -89,7 +89,8 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 
 #### Accessing the mobile bridge
  
-The [mobile bridge](https://developers.beekeeper.io/v2/welcome/mobile-bridge) enables the interaction of a hybrid feature with the native host application (i.e., the Android or iOS app) via the Beekeeper Bridge.
+The mobile bridge enables the interaction of a hybrid feature with the native host application (i.e., the Android or iOS app) via the Beekeeper Bridge.
+Through the bridge your widget gets access among others to the tenant object, the user object and the authentication token.
 
 Example from the [profiles widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles):
 
