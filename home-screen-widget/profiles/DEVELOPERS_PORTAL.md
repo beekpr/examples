@@ -147,7 +147,7 @@ E.g.
 {
   "type": "shortcuts",
   "url": "/home-screen-core-widgets/js/streams.js",
-  "featureFlags": ['streams'],
+  "featureFlags": ["streams"],
   "propertiesSchema": {
     "pinnedStreams": {
       "$id": "#/propertiesSchema/pinnedStreams",
