@@ -4,7 +4,7 @@ This gives people effortless access to tools and information that are contextual
 
 ## Contents
 
-1. [Architecture](#Achitecture)
+1. [Architecture](#Architecture)
 2. [Home screen widget development](#Home screen widget development)
 3. [Configuring the home screen for a tenant](#Configuring the home screen for a tenant)
 
