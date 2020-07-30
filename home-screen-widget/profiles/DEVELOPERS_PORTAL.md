@@ -237,7 +237,7 @@ For instance a widget configuration containing the configured streams and the sh
 
 
 ### Access management (ACL)
-Widgets access can be modified in order to make limit the visibility of a widget to a subset of users.
+Access to widgets can be modified in order to make limit the visibility of a widget to a subset of users.
 
 #### Fetching the acl
 Every entity has an acl associated to it. These can be accessed by following the acl url in `rels` in order to get them.
