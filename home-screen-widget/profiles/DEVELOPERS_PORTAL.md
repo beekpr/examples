@@ -51,7 +51,7 @@ registerWidget(widgetTypeId: string, widgetComponent: Component): void;
 import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
 
 import component, { WIDGET_ID } from '~/profiles/components/Widget.vue';
-BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
+BeekeeperHomeScreen.registerWidget(WIDGET_ID, component) // highlight-line
 ```
 
 
@@ -72,7 +72,7 @@ Widgets can communicate with the home screen by triggering events.
 For example this is how we trigger the `LOADED` event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
 ```javascript:title=home-screen-widget/components/Widget.js
   import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
-  BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
+  BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId); // highlight-line
 ```
 
 #### Calling Beekeeper SDK
@@ -84,7 +84,7 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 ```javascript:title=home-screen-widget/store/index.js 
   import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
   ...
-  BeekeeperHomeScreen.sdk.Profiles.list({ limit: 50 });
+  BeekeeperHomeScreen.sdk.Profiles.list({ limit: 50 }); // highlight-line
 ```
 
 #### Accessing the mobile bridge
@@ -97,7 +97,7 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 ```javascript:title=home-screen-widget/main.js 
   import BeekeeperHomeScreen from '@beekeeper/home-screen-sdk';
   ...
-  const BeekeeperMobileBridge = BeekeeperHomeScreen.bridge;
+  const BeekeeperMobileBridge = BeekeeperHomeScreen.bridge; // highlight-line
 ```
 Here we fetch the device locale in order to initialize the translation library. 
 
