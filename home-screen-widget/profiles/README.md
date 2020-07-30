@@ -4,7 +4,7 @@ This is a guided example on how to develop a home screen widget.
 In this example we provide a working widget that uses the Beekeeper Javascript SDK to fetch 50 user profiles and display
 them in a grid layout.
 
-![Drag Racing](../photos/profiles_widget.png)
+![](https://github.com/beekpr/examples/blob/FUL-21524/home-screen-widget/profiles/photos/profiles_widget.png)
 
 
 For a more in depth overview on how the home screen is built and on how to set up the development environment
@@ -17,7 +17,27 @@ please visit our [developer portal](https://developers.beekeeper.io/v2/welcome/h
 ## Required Steps
  
 1. [Define Widget Id](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L19)
+   ```javascript:title=home-screen-widget/components/Widget.js
+   export const WIDGET_ID = 'profiles';
+   ```
 2. [Register Widget Component](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/main.js#L9)
+    ```javascript:title=home-screen-widget/main.js
+    BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
+    ```
 3. [Add widgetInstanceId Prop](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L38)
+   ```javascript:title=home-screen-widget/components/Widget.js
+    props: {
+        widgetInstanceId: {
+            type: String,
+            required: true,
+        },
+    ```
 4. [Register Widget Store Module](https://github.com/beekpr/examples/blob/ef4531a96d1424bf449a631ba5f2f6abc09e6a23/home-screen-widget/profiles/components/Widget.vue#L84)
+    ```javascript:title=home-screen-widget/components/Widget.js
+    this.$store.registerModule(WIDGET_ID, store, { preserveState: false });
+    ```
 6. [Trigger LOADED Event](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L71)
+    ```javascript:title=home-screen-widget/components/Widget.js
+    import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
+    BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId); // highlight-line
+    ```
