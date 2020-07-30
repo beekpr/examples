@@ -83,7 +83,7 @@ export default {
     },
     beforeCreate() {
         /**
-         * Step 4: Register widget store module
+         * Step 4: Register widget store module (Optional: not needed for a static widget without store)
          *
          * In order for Vuex to be aware of this store, we need to register it upon widget creation.
          * When the module is registered, all of its getters, actions and mutations will be automatically
