@@ -1,4 +1,4 @@
-# HOME
+# Home
 Home is a feature that surfaces relevant information by displaying a list of widgets in a new main tab on the mobile clients. 
 This gives people effortless access to tools and information that are contextually relevant to their work. 
 
@@ -15,7 +15,7 @@ Home or the home screen (as we call it in the code) consists of a hybrid app whi
 From an architecture perspective the home screen can be split into 4 logical components: 
 
 1. **Home screen**: a hybrid app that is in charge of fetching the home screen configuration for the tenant and dynamically displaying the widgets.
-2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend reading up on it [here](https://vuejs.org/v2/guide/).
+2. **Widgets**: Vue.js components that are loaded dynamically by the home screen and rendered. If you are not familiar with Vue.js, we recommend checking out their [guide](https://vuejs.org/v2/guide/).
 3. **Configurations**: Tenant admins can not only configure which widgets are shown on the home screen but also specify input parameters to the widgets themselves. Configurations are also loaded by the home screen on start up.  
 4. **HomeScreenSDK**: an SDK that glues everything together by allowing widgets to: 
     * Register themselves onto the home screen
@@ -39,7 +39,7 @@ To install the HomeScreenSDK simply add it as a dependency to your `package.json
 
 #### Registering a widget
 
-When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the `widgetTypeId` is a unique identifier for the widget (e.g. the Streams widget has id 'streams').
+When we register a widget we make the widget component known to the home screen. The widget component is the Vue.js component and the `widgetTypeId` is a unique identifier for the widget (e.g. the Streams widget has id `streams`).
 
 ```javascript
 registerWidget(widgetTypeId: string, widgetComponent: Component): void;
@@ -69,7 +69,7 @@ Widgets can communicate with the home screen by triggering events.
 ```
  
 
-For example this is how we trigger the LOADED event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
+For example this is how we trigger the `LOADED` event in the [example widget](https://github.com/beekpr/examples/tree/master/home-screen-widget/profiles).
 ```javascript 
   import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
   BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
@@ -135,7 +135,7 @@ To configure the home screen we have three main entities:
 Every new widget developed by Beekeeper or by third party developers must be defined and registered as a widget type. 
 
 A widget type is defined by: 
-* `type`: The unique name of the widget type, e.g. ("streams" for the Streams widget)
+* `type`: The unique name of the widget type, e.g. (`streams` for the Streams widget)
 * `propertiesSchema`: a dictionary of input properties that can be configured and which represents the customizable input data for the widget
 * `url`: The relative url path to fetch the widget
 * `featureFlags`: The necessary feature flags that the user has to have in order for the widget to be displayed
@@ -238,7 +238,7 @@ For instance a widget configuration containing the configured streams and the sh
 
 
 ### Access management (ACL)
-Access to widgets can be modified in order to make limit the visibility of a widget to a subset of users.
+Access to widgets can be modified in order to limit the visibility of a widget to a subset of users.
 
 #### Fetching the acl
 Every entity has an acl associated to it. These can be accessed by following the acl url in `rels` in order to get them.
