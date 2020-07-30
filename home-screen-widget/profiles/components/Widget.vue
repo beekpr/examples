@@ -52,7 +52,7 @@ export default {
         /**
          * Step 7: Define customizable input props (Optional)
          *
-         * Every widget can have input properties that be customized by admins.
+         * Every widget can have input properties that can be customized by admins.
          * In this example for different widget instances one might want to display more or fewer profiles.
          * The default is now set to 50.
          *
