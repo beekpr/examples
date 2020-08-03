@@ -18,7 +18,7 @@ please visit our [developer portal](https://developers.beekeeper.io/v2/welcome/h
  
 1. Step 1: [Define Widget Id](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L19)
    ```javascript:title=home-screen-widget/components/Widget.js
-   export const WIDGET_ID = 'profiles';
+    export const WIDGET_ID = 'profiles';
    ```
 2. Step 2: [Register Widget Component](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/main.js#L9)
     ```javascript:title=home-screen-widget/main.js
@@ -27,15 +27,15 @@ please visit our [developer portal](https://developers.beekeeper.io/v2/welcome/h
 3. Step 3: [Add widgetInstanceId Prop](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L38)
    ```javascript:title=home-screen-widget/components/Widget.js
     props: {
-        widgetInstanceId: {
-            type: String,
-            required: true,
-        },
-    ```
+    widgetInstanceId: {
+        type: String,
+        required: true,
+    },
+   ```
 6. Step 6:  [Trigger LOADED Event](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L71)
-    ```javascript:title=home-screen-widget/components/Widget.js
+   ```javascript:title=home-screen-widget/components/Widget.js
     import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
-    BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId); // highlight-line
+    BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
     ```
 
 Note: Steps 4,5,7 are not mandatory for a basic widget. 
