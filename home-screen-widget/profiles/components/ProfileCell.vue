@@ -1,5 +1,5 @@
 <template>
-    <ClickablePane @click="onClick">
+    <ClickablePane @click="navigateToProfile">
         <div class="profile-cell">
             <div class="profile-cell__cover">
                 <img
@@ -39,9 +39,6 @@ export default {
         },
     },
     methods: {
-        onClick() {
-            this.navigateToProfile();
-        },
         navigateToProfile() {
             window.location.assign(this.pathToProfile);
         },

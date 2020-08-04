@@ -17,7 +17,7 @@ If you are new to Vue.js please check out their [guide](https://vuejs.org/v2/gui
 
 ## Required Steps
  
-1. Step 1: [Define Widget Id](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L19)
+1. Step 1: [Define Widget ID](https://github.com/beekpr/examples/blob/40f4f6c66c4d2d8f64796ca0932eaa31648a810c/home-screen-widget/profiles/components/Widget.vue#L19)
     ```javascript:title=home-screen-widget/components/Widget.js
     export const WIDGET_ID = 'profiles';
     ```
