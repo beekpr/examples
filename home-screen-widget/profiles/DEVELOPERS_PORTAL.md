@@ -23,7 +23,47 @@ From an architecture perspective the home screen can be split into 4 logical com
     * Access the mobile bridge
     * Send events from the widgets to the home screen
 
-### HomeScreenSDK
+
+
+## 2. Home screen widget development
+
+### Steps
+
+
+1. **Test tenant**: In order to start developing your own widget you need access to a test tenant. If you don't already have a test tenant please request it by contacting us at [support@beekeeper.io](mailto:support@beekeeper.io).
+2. **Global admin account**: In order to be able to add a new widget type, you will need to have global admin permissions. 
+2. **Displaying home** 
+    1. **Mobile device**:  If would like to test your widget on a mobile device, simply open the Beekeeper app, log into your test account and go to the home tab. You should then see the home screen with some default widgets.
+    2. **Chrome**: If you'd  rather  test it on Chrome, toggle the device toolbar in the Developers tools and navigate to https://you-test-tenant-url/home (e.g. https://www.widget-testing-tenant.beekeeper.io/home). You should then see the home screen with some default widgets. 
+3. **Develop your own widget**.
+    1. **Create a new widget**: as a starting point you can use our example widget. For more info about widget development check out 
+        1. [Example widget](#profiles-example-widget).
+        2. [HomeScreenSKD](#homescreenskd)
+    2. **Hosting**: Your widget needs to be hosted and be downloadable as a js bundle 
+4. **Add your widget to the home screen**: This includes two parts
+    1.  [Register your new widget type](#adding-a-new-widget-type-for-a-tenant)
+        1. Use the your hosted widget url for the `url` in the payload
+        2. Use the `WIDGET_ID` used to register the widget for the `type` in the payload  
+    2.  [Add an instance of your widget type to test tenant home screen](#adding-widgets-to-a-home-screen-configuration)
+    3.  (Optional) Go over the [home screen configuration section](#3-configuring-the-home-screen-for-a-tenant) to learn more about configuring the home screen 
+5. You should now see your widget in the home screen (you might need to restart the app on the mobile device).
+
+
+### Profiles example widget
+
+In order to facilitate the development of third-party widgets we created an example widget. 
+The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display's user profiles. 
+
+Make sure the to follow the instruction steps in code to find the essential bits and pieces. 
+
+The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
+
+
+
+
+### HomeScreenSKD
+
+The HomeScreenSDK must be used within the widgets components in order to be integrated into  the homescreen. 
 
 #### Installation
 
@@ -101,24 +141,6 @@ Example from the [profiles widget](https://github.com/beekpr/examples/tree/maste
 ```
 Here we fetch the device locale in order to initialize the translation library. 
 
-## 2. Home screen widget development
-
-### 1. Set up local development environment 
-TODO
-
-### 2. Develop a new widget
-
-In order to ease the development of third-party widgets we created an example widget. 
-The widget uses the Beekeeper SDK accessible through the HomeScreenSDK to fetch and display user profiles. 
-
-Make sure to follow the instruction steps in the code to find the essential bits and pieces. 
-
-The code can be found [here](https://github.com/beekpr/examples/tree/FUL-21524/home-screen-widget/profiles).
-
-
-### 3. Publish your widget
-
-TODO
 
 
 ## 3. Configuring the home screen for a tenant
@@ -330,6 +352,25 @@ which returns:
 }
 
 ```
+### Adding a new widget type for a tenant
+``` 
+POST home-screen/widget-type
+Host: <your_subdomain>.beekeeper.io
+Authorization: Token <global-admin-token>
+Content-Type: application/json
+```
+with a body of, for example:
+``` json
+        {
+            "url": "http://widget-repos.com/my-new-widget/js/shortcuts.js",
+            "propertiesSchema": "{}",
+            "type": "my-new-widget",
+            "featureFlags": []
+        },
+```
+
+
+
 
 ### Adding widgets to a home screen configuration
 ``` 
