@@ -12,8 +12,8 @@
 import { createNamespacedHelpers } from 'vuex';
 import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
 
-import ProfilesGrid from '~/profiles/components/ProfilesGrid.vue';
-import store from '~/profiles/store';
+import ProfilesGrid from '~/components/ProfilesGrid.vue';
+import store from '~/store';
 
 /**
  * Step 1: Define widget id
