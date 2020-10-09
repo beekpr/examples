@@ -27,7 +27,7 @@ Now, we can start the development server:
 yarn serve
 ```
 
-In order to use your local widget in a tenant, it is required to make accessible from the outside world. One way is to use [NGROK](https://ngrok.com/) to expose your local development. Next, you will need to make request to the API to register the widget type and grant access for your tenant.
+In order to use your local widget in a tenant, it is required to make it accessible from the outside world. One way is to use [NGROK](https://ngrok.com/) to expose your local development. Next, you will need to make a request to the API to register the widget type and grant access for your tenant.
 
 ## Required Steps for Widget Development
 
@@ -62,4 +62,4 @@ As the Home Screen uses Webpack to bundle components, please take a look at [vue
 ## Limitations
 
 The home screen only supports widgets developed using [Vue 2](https://vuejs.org/) and [Vuex 3](https://vuex.vuejs.org/). 
-If you are new to Vue, please check visit the [official guide](https://vuejs.org/v2/guide/).
+If you are new to Vue, please visit the [official guide](https://vuejs.org/v2/guide/).
