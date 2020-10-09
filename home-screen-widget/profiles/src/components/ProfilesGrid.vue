@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ProfileCell from '~/profiles/components/ProfileCell.vue';
+import ProfileCell from '~/components/ProfileCell.vue';
 
 
 export default {

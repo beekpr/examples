@@ -27,9 +27,9 @@ export default {
             await dispatch('fetchProfiles', { limit: maxNumberOfFetchedProfiles });
             commit('FINISH_INIT');
         },
-        async fetchProfiles({ commit }, limit) {
+        async fetchProfiles({ commit }, params = {}) {
             try {
-                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list({ limit: limit });
+                const profiles = await BeekeeperHomeScreen.sdk.Profiles.list(params);
                 commit('SET_PROFILES', { profiles });
             } catch (error) {
                 // eslint-disable-next-line no-console

@@ -17,7 +17,7 @@
 
 <script>
 
-import ClickablePane from '~/profiles/components/ClickablePane.vue';
+import ClickablePane from '~/components/ClickablePane.vue';
 
 export default {
     components: {
