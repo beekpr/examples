@@ -21,13 +21,17 @@ First, let's install all dependencies by running:
 yarn
 ```
 
-Now, we can start the development server with: 
+Now, we can start the development server: 
 
 ```sh
 yarn serve
 ```
 
-## Required Steps
+In order to use your local widget in a tenant, it is required to make accessible from the outside world. One way is to use [NGROK](https://ngrok.com/) to expose your local development. Next, you will need to make request to the API to register the widget type and grant access for your tenant.
+
+## Required Steps for Widget Development
+
+The following four steps are **required** for every widget to be shown on the home screen.
  
 1. [Define Widget ID](src/components/Widget.vue#L19)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
@@ -50,6 +54,10 @@ yarn serve
     import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
     BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
     ```
+
+## Caveats with Webpack
+
+As the Home Screen uses Webpack to bundle components, please take a look at [vue.config.js](./vue.config.js) to understand the mandatory configuration.
 
 ## Limitations
 

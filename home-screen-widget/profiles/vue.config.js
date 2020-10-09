@@ -12,7 +12,7 @@ module.exports = {
         /**
          * Vue and Vuex will be provided by the Home Screen through the window.
          * Please do not include these dependencies to prevent unexpected
-         * behavior.
+         * behavior and increased bundle size.
          */
         externals: {
             vue: 'Vue',
