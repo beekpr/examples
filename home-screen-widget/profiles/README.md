@@ -55,6 +55,24 @@ The following four steps are **required** for every widget to be shown on the ho
     BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
     ```
 
+## Registering with API
+
+If you followed above steps, you should have a local development server running on a public accessible URL e.g. http://2af62c7779d5.ngrok.io. Navigating to a sub path of your URL should hold the whole bundle of your widget.
+
+Next, you will have to register your new widget type with the API and configure your Home Screen to include your new widget. For both steps, you can use the provided Python 3 script in the ``scripts`` folder. 
+
+To create a new widget type:
+
+```shell
+python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget_type --widgetType <widget_type> --widgetUrl <widget_url>
+```
+
+To grant access to your widget for all users of a tenant: 
+
+```shell
+python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget --tenantAccess <tenant_id> --widgetType <widget_type>
+```
+
 ## Caveats with Webpack
 
 As the Home Screen uses Webpack to bundle components, please take a look at [vue.config.js](./vue.config.js) to understand the mandatory configuration.
