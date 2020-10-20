@@ -18,7 +18,7 @@ For widget development, the following dependencies are required:
 First, let's install all dependencies by running: 
 
 ```sh
-yarn
+yarn install
 ```
 
 Now, we can start the development server: 
@@ -27,9 +27,27 @@ Now, we can start the development server:
 yarn serve
 ```
 
-In order to use your local widget in a tenant, it is required to make it accessible from the outside world. One way is to use [NGROK](https://ngrok.com/) to expose your local development. Next, you will need to make a request to the API to register the widget type and grant access for your tenant.
+To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/). You can start a simple forward with ``ngrok http 8080``. Next, you will need to make a request to the API to register the widget type and grant access for your tenant.
 
-## Required Steps for Widget Development
+## Registering with API
+
+If you followed above steps, you should have a local development server running on a public accessible URL e.g. https://2af62c7779d5.ngrok.io. Navigating to https://2af62c7779d5.ngrok.io/home-screen-widget-profiles/js/profiles.js in your browser should show you the content of the whole bundle.
+
+Next, you will have to register your new widget type with the Beekeeper API and configure your Home Screen to include your new widget. For both steps, you can use the provided Python 3 script in the ``scripts`` folder. 
+
+To create a new widget type:
+
+```shell
+python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget_type --widgetType <widget_type> --widgetUrl <widget_url>
+```
+
+To grant access to your widget for all users of a tenant: 
+
+```shell
+python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget --tenantAccess <tenant_id> --widgetType <widget_type>
+```
+
+## Highlighted Snippets for Widget Development
 
 The following four steps are **required** for every widget to be shown on the home screen.
  
@@ -56,24 +74,6 @@ The following four steps are **required** for every widget to be shown on the ho
     import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
     BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
     ```
-
-## Registering with API
-
-If you followed above steps, you should have a local development server running on a public accessible URL e.g. http://2af62c7779d5.ngrok.io. Navigating to a sub path of your URL should hold the whole bundle of your widget.
-
-Next, you will have to register your new widget type with the API and configure your Home Screen to include your new widget. For both steps, you can use the provided Python 3 script in the ``scripts`` folder. 
-
-To create a new widget type:
-
-```shell
-python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget_type --widgetType <widget_type> --widgetUrl <widget_url>
-```
-
-To grant access to your widget for all users of a tenant: 
-
-```shell
-python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --token <access_token> --op add_widget --tenantAccess <tenant_id> --widgetType <widget_type>
-```
 
 ## Caveats with Webpack
 
