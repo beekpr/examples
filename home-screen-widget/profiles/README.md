@@ -50,7 +50,6 @@ The following four steps are **required** for every widget to be shown on the ho
         },
         ...
     },
-    ...
     ```
 4. [Trigger LOADED Event](src/components/Widget.vue#L71)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
