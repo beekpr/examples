@@ -44,10 +44,13 @@ The following four steps are **required** for every widget to be shown on the ho
 3. [Add widgetInstanceId Prop](src/components/Widget.vue#L38)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
     props: {
-    widgetInstanceId: {
-        type: String,
-        required: true,
+        widgetInstanceId: {
+            type: String,
+            required: true,
+        },
+        ...
     },
+    ...
     ```
 4. [Trigger LOADED Event](src/components/Widget.vue#L71)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
