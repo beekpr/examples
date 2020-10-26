@@ -27,7 +27,11 @@ Now, we can start the development server:
 yarn serve
 ```
 
-To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/). You can start a simple forward with ``ngrok http 8080``. Next, you will need to make a request to the API to register the widget type and grant access for your tenant.
+To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/).
+
+If you would like to test your widget in the browser, please follow the instructions in [@beekeeper/mobile-bridge-setup](https://www.npmjs.com/package/@beekeeper/mobile-bridge-setup) to setup a mobile-bridge mock.
+
+For more details, please visit the [Developer Portal](https://developers.beekeeper.io/v2/welcome/home-screen#2-widget-development).
 
 ## Registering with API
 
