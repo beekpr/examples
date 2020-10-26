@@ -61,11 +61,11 @@ The following four steps are **required** for every widget to be shown on the ho
  
 1. [Define Widget ID](src/components/Widget.vue#L19)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
-    export const WIDGET_ID = 'profiles';
+    export const WIDGET_TYPE = 'profiles';
     ```
 2. [Register Widget Component](src/main.js#L9)
     ```javascript:title=home-screen-widget/profiles/src/main.js
-    BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
+    BeekeeperHomeScreen.registerWidget(WIDGET_TYPE, component)
     ```
 3. [Add widgetInstanceId Prop](src/components/Widget.vue#L38)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue

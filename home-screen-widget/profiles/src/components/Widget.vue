@@ -16,20 +16,17 @@ import ProfilesGrid from '~/components/ProfilesGrid.vue';
 import store from '~/store';
 
 /**
- * Step 1: Define widget id
+ * Step 1: Specify widget type
  *
- *
- * This is the vue component of your widget that will be loaded onto the home screen.
  * In order for the home screen to be aware of the widget we need to register it. That's why we defined here
- * a unique widget string id that will identify our widget type in the Beekeeper ecosystem.
- * We called it 'profiles' since this is the profiles widget.
+ * a unique string as widget type. We called it 'profiles' since this is the profiles widget.
  * See also the "Widget type" in the "Configuration" section on the developers portal
  * {@link https://developers.beekeeper.io/v2/welcome/home-screen}
  */
-export const WIDGET_ID = 'profiles';
+export const WIDGET_TYPE = 'profiles';
 export const PROFILE_LIMIT = 50;
 
-const { mapState, mapActions } = createNamespacedHelpers(WIDGET_ID);
+const { mapState, mapActions } = createNamespacedHelpers(WIDGET_TYPE);
 
 
 export default {
@@ -89,7 +86,7 @@ export default {
          * When the module is registered, all of its getters, actions and mutations will be automatically
          * namespaced based on the path the module is registered at.
          */
-        this.$store.registerModule(WIDGET_ID, store, { preserveState: false });
+        this.$store.registerModule(WIDGET_TYPE, store, { preserveState: false });
     },
     created() {
         this.initStore(this.maxNumberOfDisplayedProfiles);
