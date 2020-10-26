@@ -27,7 +27,11 @@ Now, we can start the development server:
 yarn serve
 ```
 
-To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/). You can start a simple forward with ``ngrok http 8080``. Next, you will need to make a request to the API to register the widget type and grant access for your tenant.
+To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/).
+
+If you would like to test your widget in the browser, please follow the instructions in [@beekeeper/mobile-bridge-setup](https://www.npmjs.com/package/@beekeeper/mobile-bridge-setup) to setup a mobile-bridge mock.
+
+For more details, please visit the [Developer Portal](https://developers.beekeeper.io/v2/welcome/home-screen#2-widget-development).
 
 ## Registering with API
 
@@ -36,6 +40,8 @@ If you followed above steps, you should have a local development server running 
 Next, you will have to register your new widget type with the Beekeeper API and configure your Home Screen to include your new widget. For both steps, you can use the provided Python 3 script in the ``scripts`` folder. 
 
 An access token can be obtained by following the steps to create a bot in the [help center](https://adminhelp.beekeeper.io/hc/en-us/articles/360002574420-Creating-Bots). Make sure to grant ``Admin Permissions``.
+
+For allowing access to your tenant, you will neeed to know your ``tenant_id``, which you can find by navigating to `https://<tenant_url>/api/2/config` and looking for the ``general.id`` field. 
 
 To create a new widget type:
 
@@ -55,11 +61,11 @@ The following four steps are **required** for every widget to be shown on the ho
  
 1. [Define Widget ID](src/components/Widget.vue#L19)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
-    export const WIDGET_ID = 'profiles';
+    export const WIDGET_TYPE = 'profiles';
     ```
 2. [Register Widget Component](src/main.js#L9)
     ```javascript:title=home-screen-widget/profiles/src/main.js
-    BeekeeperHomeScreen.registerWidget(WIDGET_ID, component)
+    BeekeeperHomeScreen.registerWidget(WIDGET_TYPE, component)
     ```
 3. [Add widgetInstanceId Prop](src/components/Widget.vue#L38)
     ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
