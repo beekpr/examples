@@ -87,6 +87,10 @@ The following four steps are **required** for every widget to be shown on the ho
 
 As the Home Screen uses Webpack to bundle components, please take a look at [vue.config.js](./vue.config.js) to understand the mandatory configuration.
 
+## Common Pitfalls
+
+Make sure to update the ``WIDGET_TYPE`` in Widget.vue to the ``typeName`` returned by the API. Otherwise, your widget will not be loaded. 
+
 ## Limitations
 
 The home screen only supports widgets developed using [Vue 2](https://vuejs.org/) and [Vuex 3](https://vuex.vuejs.org/). 
