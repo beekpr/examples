@@ -1,7 +1,7 @@
 {
   "name": "home-screen-data-source",
   "version": "1.0.0",
-  "description": "A service verifying JWT sent by the widdget on the Home Screen",
+  "description": "A service verifying JWT sent by the widget on the Home Screen",
   "main": "lib/index.js",
   "author": "Beekeeper AG <developers@beekeeper.io>",
   "license": "UNLICENSED",
