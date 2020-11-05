@@ -9,87 +9,58 @@
 </template>
 
 <script>
-import { createNamespacedHelpers } from 'vuex';
-import BeekeeperHomeScreen, { EventType } from '@beekeeper/home-screen-sdk';
+import { mapActions, mapState } from 'vuex';
 
 import ProfilesGrid from '~/components/ProfilesGrid.vue';
-import store from '~/store';
 
 /**
- * Step 1: Specify widget type
+ * Step 1: Specify widget type name
  *
  * In order for the home screen to be aware of the widget we need to register it. That's why we defined here
  * a unique string as widget type. We called it 'profiles' since this is the profiles widget.
  * See also the "Widget type" in the "Configuration" section on the developers portal
  * {@link https://developers.beekeeper.io/v2/welcome/home-screen}
  */
-export const WIDGET_TYPE = 'profiles';
+export const WIDGET_TYPE_NAME = 'profiles';
 export const PROFILE_LIMIT = 50;
-
-const { mapState, mapActions } = createNamespacedHelpers(WIDGET_TYPE);
 
 
 export default {
     components: {
         ProfilesGrid,
     },
-    /**
-     * Step 3: Add widgetInstanceId prop
-     *
-     * Once the widget is registered, the home screen will try to instantiate it and assign an instance id.
-     * This will be used by the home screen to manage all widgets and listen to events.
-     * In order for this to work, we therefore need a vue prop called 'widgetInstanceId'.
-     */
-    props: {
-        widgetInstanceId: {
-            type: String,
-            required: true,
-        },
-
-        /**
-         * Step 7: Define customizable input props (Optional)
-         *
-         * Every widget can have input properties that can be customized by admins.
-         * In this example for different widget instances one might want to display more or fewer profiles.
-         * The default is now set to 50.
-         *
-         */
-        maxNumberOfDisplayedProfiles: {
-            type: Number,
-            required: false,
-            default() {
-                return PROFILE_LIMIT;
-            },
-        },
-    },
     computed: {
         ...mapState(['profiles', 'initialized']),
     },
-    watch: {
-        /**
-         * Step 6: Trigger LOADED event
-         *
-         * Once the profiles are successfully loaded we notify the home screen by triggering an event
-         * that contains the event type and the widget instance id
-         */
-        initialized(newVal, oldVal) {
-            if (newVal && newVal !== oldVal) {
-                BeekeeperHomeScreen.triggerEvent(EventType.LOADED, this.widgetInstanceId);
+    props: {
+        properties: {
+            type: Object,
+            default() {
+                return {
+                   maxNumberOfDisplayedProfiles: 12, 
+                };
             }
         },
     },
-    beforeCreate() {
+    watch: {
         /**
-         * Step 4: Register widget store module (Optional: not needed for a static widget without store)
+         * Step 3: Trigger `widget-loaded` event
          *
-         * In order for Vuex to be aware of this store, we need to register it upon widget creation.
-         * When the module is registered, all of its getters, actions and mutations will be automatically
-         * namespaced based on the path the module is registered at.
+         * Once the profiles are successfully loaded we notify the home screen by triggering an event
          */
-        this.$store.registerModule(WIDGET_TYPE, store, { preserveState: false });
+        initialized(newVal, oldVal) {
+            if (newVal && newVal !== oldVal) {
+                this.$emit('widget-loaded');
+            }
+        },
+    },
+    computed: {
+        displayedProfiles() {
+            return this.properties?.maxNumberOfDisplayedProfiles || 12;
+        },
     },
     created() {
-        this.initStore(this.maxNumberOfDisplayedProfiles);
+        this.initStore(displayedProfiles);
     },
     methods: {
         ...mapActions({
