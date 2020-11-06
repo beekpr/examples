@@ -29,9 +29,6 @@ export default {
     components: {
         ProfilesGrid,
     },
-    computed: {
-        ...mapState(['profiles', 'initialized']),
-    },
     props: {
         properties: {
             type: Object,
@@ -55,17 +52,17 @@ export default {
         },
     },
     computed: {
+        ...mapState(['profiles', 'initialized']),
         displayedProfiles() {
             return this.properties?.maxNumberOfDisplayedProfiles || PROFILE_LIMIT;
         },
     },
     created() {
-        this.initStore(displayedProfiles);
+        this.initStore(this.displayedProfiles);
     },
     methods: {
         ...mapActions({
             initStore: 'init',
-            fetchProfiles: 'fetchProfiles',
         }),
     },
 };
