@@ -56,7 +56,7 @@ export default {
     },
     computed: {
         displayedProfiles() {
-            return this.properties?.maxNumberOfDisplayedProfiles || 12;
+            return this.properties?.maxNumberOfDisplayedProfiles || PROFILE_LIMIT;
         },
     },
     created() {
