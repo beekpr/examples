@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@beekeeper/home-screen-sdk": "^0.5.5",
+    "@beekeeper/home-screen-sdk": "^0.6.6",
     "core-js": "^3.6.5"
   },
   "devDependencies": {
