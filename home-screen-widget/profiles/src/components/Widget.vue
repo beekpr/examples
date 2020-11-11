@@ -36,7 +36,7 @@ export default {
                 return {
                    maxNumberOfDisplayedProfiles: 12, 
                 };
-            }
+            },
         },
     },
     watch: {

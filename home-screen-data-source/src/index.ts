@@ -1,10 +1,15 @@
-import express, { Request, Response } from 'express';
+import type { Request, Response } from 'express'; 
+import express from 'express';
+import cors from 'cors';
 
 import jwtMiddleware from './jwt';
 
+const PORT = 3000;
 
 const app = express();
 
+// Make sure to set this option
+app.use(cors());
 app.use(jwtMiddleware());
 
 app.get('/hello', (req: Request, res: Response) => {
@@ -16,6 +21,6 @@ app.get('/hello', (req: Request, res: Response) => {
     }    
 });
 
-app.listen(3000, () => {
-    console.log('Server started');
+app.listen(PORT, () => {
+    console.log(`Service listening on port ${PORT}`);
 });
