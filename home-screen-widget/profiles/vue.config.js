@@ -10,13 +10,14 @@ module.exports = {
     },
     configureWebpack: {
         /**
-         * Vue and Vuex will be provided by the Home Screen through the window.
+         * Vue, Vuex, and Composition API plugin will be provided by the Home Screen through the window.
          * Please do not include these dependencies to prevent unexpected
          * behavior and increased bundle size.
          */
         externals: {
             vue: 'Vue',
             vuex: 'Vuex',
+            ['@vue/composition-api']: 'VueCompositionAPI',
         },
         output: {
             filename: 'js/[name].js',
