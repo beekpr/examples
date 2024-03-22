@@ -27,6 +27,13 @@ Now, we can start the development server:
 yarn serve
 ```
 
+You might encounter problems with serving the context, if so perform updates: 
+
+```sh
+npm update
+npm audit fix
+```
+
 To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/).
 
 If you would like to test your widget in the browser, please follow the instructions in [@beekeeper/mobile-bridge-setup](https://www.npmjs.com/package/@beekeeper/mobile-bridge-setup) to setup a mobile-bridge mock.
