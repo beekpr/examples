@@ -58,7 +58,7 @@ module.exports = {
     },
     pages: {
         profiles: {
-            entry: './src/main.ts',
+            entry: './src/main.js',
         },
     },
 };
