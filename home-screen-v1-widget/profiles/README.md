@@ -67,15 +67,15 @@ python3 scripts/configure_home_screen.py --tenantUrl https://<tenant_url> --toke
 The following four steps are **required** for every widget to be shown on the home screen.
  
 1. [Define Widget Type Name](src/components/Widget.vue#L17)
-    ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
+    ```javascript:title=home-screen-v1-widget/profiles/src/components/Widget.vue
     export const WIDGET_TYPE_NAME = 'profiles';
     ```
 2. [Register Widget Component](src/main.js#L6)
-    ```javascript:title=home-screen-widget/profiles/src/main.js
+    ```javascript:title=home-screen-v1-widget/profiles/src/main.ts
     BeekeeperHomeScreen.registerVueWidget(WIDGET_TYPE_NAME, component)
     ```
 3. [Trigger 'widget-loaded' Event](src/components/Widget.vue#L46)
-    ```javascript:title=home-screen-widget/profiles/src/components/Widget.vue
+    ```javascript:title=home-screen-v1-widget/profiles/src/components/Widget.vue
     this.$emit('widget-loaded');
     ```
 

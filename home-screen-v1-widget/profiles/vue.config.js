@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    publicPath: '/home-screen-widget-profiles/',
+    publicPath: '/home-screen-v1-widget-profiles/',
     devServer: {
         disableHostCheck: true,
         headers: {
