@@ -24,4 +24,4 @@ Or, build the widget:
 yarn build
 ```
 
-To use your widget in a test tenant, you will need to expose your development server to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/).
+To use your widget in a test tenant, you will need to expose your widget to testing device. If both devices are in the same network, this should be simple. You should see the address of the development server on the console. Otherwise, we recommend to use a solution like [NGROK](https://ngrok.com/), or building the widget and hosting it on a server of your choice.
