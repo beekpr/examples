@@ -15,7 +15,7 @@ yarn install
 Now, we can start the development server:
 
 ```sh
-yarn serve
+yarn dev
 ```
 
 Or, build the widget:
