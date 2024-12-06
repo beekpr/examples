@@ -46,7 +46,7 @@ If you followed above steps, you should have a local development server running 
 
 Next, you will have to register your new widget type with the Beekeeper API and configure your Home Screen to include your new widget. For both steps, you can use the provided Python 3 script in the ``scripts`` folder. 
 
-An access token can be obtained by following the steps to create a bot in the [help center](https://adminhelp.beekeeper.io/hc/en-us/articles/360002574420-Creating-Bots). Make sure to grant ``Admin Permissions``.
+An access token can be obtained by following the steps to create a bot in the [help center](https://help.beekeeper.io/hc/en-us/articles/19734465723026-Creating-Bots). Make sure to grant ``Admin Permissions``.
 
 For allowing access to your tenant, you will neeed to know your ``tenant_id``, which you can find by navigating to `https://<tenant_url>/api/2/config` and looking for the ``general.id`` field. 
 
